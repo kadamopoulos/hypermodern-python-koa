@@ -1,2 +1,3 @@
 src/hypermodern_python_koa/__pycache__/
 tests/__pycache__/
+.coverage
