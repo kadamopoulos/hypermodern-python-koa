@@ -14,6 +14,8 @@ requests = "^2.32.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
+coverage = {extras = ["toml"], version = "^7.6.9"}
+pytest-cov = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -28,3 +30,16 @@ keywords = ["hypermodern"]
 
 [tool.poetry.scripts]
 hypermodern-python-koa = "hypermodern_python_koa.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["hypermodern_python_koa"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.coverage.report]
+fail_under = 100
