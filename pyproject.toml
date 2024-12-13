@@ -2,7 +2,8 @@
 name = "hypermodern-python-koa"
 version = "0.1.0"
 description = ""
-authors = ["edsml-ka2523 <konstantinos.adamopoulos23@imperial.ac.uk>"]
+authors = ["kadamopoulos <constantinosadamopoulos@gmail.com>", 
+            "edsml-ka2523 <konstantinos.adamopoulos23@imperial.ac.uk>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
