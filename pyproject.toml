@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 click = "^8.1.7"
+requests = "^2.32.3"
 
 
 [build-system]
@@ -21,3 +22,6 @@ readme = "README.md"
 homepage = "https://github.com/kadamopoulos/hypermodern-python-koa"
 repository = "https://github.com/kadamopoulos/hypermodern-python-koa"
 keywords = ["hypermodern"]
+
+[tool.poetry.scripts]
+hypermodern-python-koa = "hypermodern_python_koa.console:main"
