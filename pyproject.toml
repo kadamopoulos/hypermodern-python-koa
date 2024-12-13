@@ -16,6 +16,7 @@ requests = "^2.32.3"
 pytest = "^8.3.4"
 coverage = {extras = ["toml"], version = "^7.6.9"}
 pytest-cov = "^6.0.0"
+pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
