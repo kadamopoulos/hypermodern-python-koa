@@ -9,3 +9,15 @@ repos:
     rev: 24.10.0
     hooks:
     -   id: black
+-   repo: local
+    hooks:
+    -   id: black
+        name: black
+        entry: poetry run black
+        language: system
+        types: [python]
+    -   id: flake8
+        name: flake8
+        entry: poetry run flake8
+        language: system
+        types: [python]
