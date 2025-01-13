@@ -12,7 +12,7 @@ def runner():
 
 @pytest.fixture
 def mock_wikipedia_random_page(mocker):
-    return mocker.patch("hypermodern_python.wikipedia.random_page")
+    return mocker.patch("hypermodern_python_koa.wikipedia.random_page")
 
 
 def test_main_uses_specified_language(runner, mock_wikipedia_random_page):
