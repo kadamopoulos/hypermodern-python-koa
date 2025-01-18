@@ -2,3 +2,4 @@ src/hypermodern_python_koa/__pycache__/
 tests/__pycache__/
 __pycache__/
 .coverage
+docs/_build/
