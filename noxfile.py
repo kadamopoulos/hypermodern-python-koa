@@ -25,6 +25,7 @@ def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> Non
             external=True,
         )
         session.install(f"--constraint={requirements.name}", *args, **kwargs)
+        session.install("types-requests", "types-urllib3")
 
 
 @nox.session(python=["3.12"])
@@ -74,7 +75,7 @@ def safety(session: Session) -> None:
             external=True,
         )
         install_with_constraints(session, "safety")
-        session.run("safety", "check", f"--file={requirements.name}", "--full-report")
+        session.run("safety", "scan", f"--file={requirements.name}", "--full-report")
 
 
 @nox.session(python=["3.12"])

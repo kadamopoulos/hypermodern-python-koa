@@ -12,5 +12,4 @@ jobs:
     - run: pip install nox==2024.10.9
     - run: pip install poetry==2.0.1
     - run: poetry self add poetry-plugin-export
-    - run: poetry install --with dev
     - run: nox
