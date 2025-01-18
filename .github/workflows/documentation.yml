@@ -1,0 +1,38 @@
+name: Documentation
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    documentation:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Set up Python
+              uses: actions/setup-python@v1
+              with:
+                python-version: 3.12
+                architecture: x64
+
+            - name: Install dependencies
+              run: |
+                  run: pip install nox==2024.10.9
+                  run: pip install poetry==2.0.1
+                  run: poetry self add poetry-plugin-export
+                  poetry install --with dev
+
+            - name: Build documentation
+              run: |
+                  nox -rs docs
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./docs/_build/html
+                publish_branch: gh-pages
+                destination_dir: .
